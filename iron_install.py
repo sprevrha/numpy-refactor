@@ -44,17 +44,17 @@ def install():
                 else:
                     dst_file = join(dst_dir, fn)
 
-                #print "Copy %s to %s" % (rel_path, dst_file)
+                print "Copy %s to %s" % (rel_path, dst_file)
                 shutil.copy(rel_path, dst_file)
             elif fn.endswith('.dll') and fn not in ignore_libs:
                 dst_file = join(dll_dir, fn)
-                print rel_path
+                # print rel_path
                 if isfile(dst_file):
                     # Rename existing file because it is probably in use
                     # by the ipy command.
                     tmp_dir = tempfile.mkdtemp()
                     os.rename(dst_file, join(tmp_dir, fn))
-                #print "Copy %s to %s" % (rel_path, dst_file)
+                print "Copy %s to %s" % (rel_path, dst_file)
                 shutil.copy(rel_path, dst_file)
 
     write_config(join(sp_dir, r'numpy\__config__.py'))
