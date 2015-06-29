@@ -4,12 +4,14 @@ Build instructions for numpy-refactor for .NET version 2.0.0, tested on
 - Compile configuration Release/Debug
 
 Instructions
-
-Set IRONPYTHON_HOME env var to the directory containing ipy.exe
-Put ipy on the PATH
-Open numpy-refactor-root-dir\numpy\NumpyDotNet\NumpyDotNet.sln. In the Solution Explorer Widget check the References of NumpyDotNet and ensure that the references to IronPython and IronPython.Moodules are resolved (i.e. do not have a yellow warning triangle badge). If they are unresolved, remove them and add them again,
-
-Open a Visual Studio Command Prompt "Run as Administrator" 
-cd to the root directory of numpy-refactor
-run ipy iron_setup.py --release
-This triggers the build and the install into your IronPython installation.
+- download IronPython 2.7.5 (http://ironpython.net/) and install
+- set IRONPYTHON_HOME env var to the directory containing ipy.exe
+- put ipy on the PATH (e.g. append ;"C:\Program Files (x86)\IronPython 2.7")
+- open <numpy-refactor-root-dir>\numpy\NumpyDotNet\NumpyDotNet.sln
+   * Add References to DLLs (IronPython and IronPython.Modules) to the NumpyDotNet project.
+   * On my machine, they are in C:\Program Files (x86)\IronPython 2.7\Platforms\Net40\
+   * In the Solution Explorer Widget check the References of NumpyDotNet and ensure that the references to IronPython and IronPython.Moodules are resolved (i.e. do not have a yellow warning triangle badge). If they are unresolved, remove them and add them again,
+   * do not build the solution
+- Open a "Visual Studio Command Prompt" (Start->..) use "Run as Administrator" (Right mouse click)
+- cd to <numpy-refactor-root-dir>
+- run ipy iron_setup.py --release (This triggers the build and the install into your IronPython installation.)
