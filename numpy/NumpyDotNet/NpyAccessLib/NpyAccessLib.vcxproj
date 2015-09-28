@@ -78,7 +78,7 @@
     <TargetExt>.dll</TargetExt>
     <OutDir>$(SolutionDir)bin\</OutDir>
     <LinkIncremental>false</LinkIncremental>
-    <CustomBuildBeforeTargets>BuildCompile</CustomBuildBeforeTargets>
+    <CustomBuildBeforeTargets>Compile</CustomBuildBeforeTargets>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <TargetExt>.dll</TargetExt>
@@ -191,6 +191,10 @@
       <Inputs>
       </Inputs>
     </CustomBuildStep>
+    <PreBuildEvent>
+      <Command>./generate_code.bat</Command>
+      <Message>Generating umath_generated.h</Message>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>

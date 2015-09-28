@@ -13,5 +13,7 @@ Instructions
    * In the Solution Explorer Widget check the References of NumpyDotNet and ensure that the references to IronPython and IronPython.Moodules are resolved (i.e. do not have a yellow warning triangle badge). If they are unresolved, remove them and add them again,
    * do not build the solution
 - Open a "Visual Studio Command Prompt" (Start->..) use "Run as Administrator" (Right mouse click)
-- cd to <numpy-refactor-root-dir>
+- cd to <numpy-refactor-root-dir>\libndarray\windows
+- run ipy build.py
+- cd to ..\.. (<numpy-refactor-root-dir>)
 - run ipy iron_setup.py --release (This triggers the build and the install into your IronPython installation.)
