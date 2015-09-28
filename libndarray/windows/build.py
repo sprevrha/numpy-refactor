@@ -28,7 +28,7 @@ def write_config():
 
 def main():
     write_config()
-    os.system("msbuild.exe /v:diag msvc2008.vcxproj")
+    os.system("msbuild.exe /v:diag msvc2008.vcxproj /p:Configuration=Release")
     # shutil.copy(r'Release\ndarray.dll', sys.prefix)
 
 
